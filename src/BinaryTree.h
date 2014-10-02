@@ -14,5 +14,7 @@ struct Node
 };
 
 void binaryTreeTraverseInOrder(Node *root);
+void binaryTreePrintInOrder(Node *node);
+void printLinear(Node *node);
 
 #endif // BinaryTree_H

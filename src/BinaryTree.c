@@ -73,3 +73,25 @@ void binaryTreeTraverseInOrder(Node *root)
     stackDel(stack);
     printf("deleted a stack\n");
 }
+
+void binaryTreePrintInOrder(Node *node)
+{
+    if(node != NULL)
+    {
+        binaryTreePrintInOrder(node->left);
+        display(node->data);
+        printf("%d ", node->data);
+        binaryTreePrintInOrder(node->right);
+    }
+}
+
+void printLinear(Node *node)
+{
+    if(node != NULL)
+    {
+        binaryTreePrintInOrder(node->left);
+        display(node->data);
+        printf("%d ", node->data);
+    }
+    printf("\n");
+}

@@ -290,3 +290,59 @@ void test_binary_tree_with_5_node_parent_and_1_left_grandchild_3_right_grandchil
 
     binaryTreeTraverseInOrder(&root);
 }
+
+/**
+ *          10
+ *         /  \
+ *        5    -
+ *       / \
+ *      2   -
+ *     / \
+ *    -   -
+ */
+void test_printLinear_given_tree_with_3_node_with_parent_and_1_left_child(void)
+{
+    Node leftChild2 = {NULL, NULL, 2};
+    Node leftChild = {&leftChild2, NULL, 5};
+    Node root = {&leftChild, NULL, 10};
+
+    printf("\nStarts test_printLinear_given_tree_with_3_node_with_parent_and_1_left_child\n");
+
+    display_Expect(2);
+    display_Expect(5);
+    display_Expect(10);
+
+    printf("Tree in order: ");
+    printLinear(&root);
+}
+
+/**
+ *               10
+ *          /         \
+ *         5          20
+ *       /   \      /    \
+ *      2     7    -      25
+ *     / \   / \         /  \
+ *    -   - -   -       -    -
+ */
+void test_binaryTreePrintInOrder_given_tree_with_6_node_with_parent_and_3_left_child_and_2_right_child(void)
+{
+    Node leftChild2 = {NULL, NULL, 2};
+    Node leftRightChild2 = {NULL, NULL, 7};
+    Node leftChild = {&leftChild2, &leftRightChild2, 5};
+    Node rightChild2 = {NULL, NULL, 25};
+    Node rightChild1 = {NULL, &rightChild2, 20};
+    Node root = {&leftChild, &rightChild1, 10};
+
+    printf("\nStarts test_binaryTreePrintInOrder_given_tree_with_6_node_with_parent_and_3_left_child_and_2_right_child\n");
+
+    display_Expect(2);
+    display_Expect(5);
+    display_Expect(7);
+    display_Expect(10);
+    display_Expect(20);
+    display_Expect(25);
+
+    printf("Tree in order: ");
+    binaryTreePrintInOrder(&root);
+}
